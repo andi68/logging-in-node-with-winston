@@ -34,12 +34,7 @@ const jsonFormatter = (logEntry) => {
 
 const level = process.env.NODE_LOGGING_LEVEL || 'info';
 const filename = process.env.NODE_LOGGING_FILENAME || __dirname + '/../../app-logs.log';
-console.log("logging level: " + level);
-console.log("logging filename: " + filename);
-console.log("dirname: " + __dirname);
-
-//path: path.resolve(__dirname, "..", "..", "logs.json")
-
+console.log("Logging level: " + level);
 
 const logger = new (winston.Logger)({
     level: level,
@@ -57,4 +52,5 @@ const logger = new (winston.Logger)({
     ]
   });
 
-module.exports = new Mask(logger);
+//module.exports = new Mask(logger);
+module.exports = logger;

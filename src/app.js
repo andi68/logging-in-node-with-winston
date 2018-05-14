@@ -1,6 +1,5 @@
 const express = require("express");
 const app = express();
-const User = require("./lib/User");
 const logger = require("./lib/logger");
 
 // console.log(process.env);
@@ -8,10 +7,10 @@ const logger = require("./lib/logger");
 app.get("/", (req, res) => {
   logger.info("/ query", { query: req.query });
 
-  logger.info("Finding user", { q: req.query.q });
-  const foundUser = User.findUser(req.query.q);
-  logger.info("User found", { foundUser });
-
+  const foundUser = {'username':'andi68'};
+  logger.debug("User found", foundUser );
+  logger.debug("foundUsername", foundUser.username );
+ 
   const msg = {
     username: foundUser && foundUser.username,
     foundUser: !!foundUser

@@ -6,16 +6,17 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bunyan": "^1.8.12",
     "express": "^4.16.3",
     "message": "0.0.1",
     "winston": "^2.4.2"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "cross-env": "^5.1.5"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "NODE_ENV=production node server.js",
-    "start-dev": "NODE_ENV=development node-dev server.js",
-    "start:andi": "NODE_PORT=8080 NODE_LOGGING_FILENAME=${HOME}/DEV/andi/js/logging-in-node-with-winston/andis2-log.log node server.js"
+    "start-dev": "NODE_ENV=development node server.js",
+    "start-andi": "cross-env NODE_PORT=8080 NODE_LOGGING_FILENAME=C:/DEV/paas/ews/andi/js/logging-in-node-with-winston/andis2-log.log NODE_LOGGING_LEVEL=debug node server.js"
   }
 }
